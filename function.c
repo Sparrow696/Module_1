@@ -3,25 +3,44 @@
 
 unsigned long long Square(const long long value_)
 {
-   return value_*value_;
+	return value_ * value_;
 }
 
-int SimpleNum(unsigned long long value_)
+int Reverse(unsigned long value_)
 {
-	int simple=0;
-	int i = 2;
-	while (i<=sqrt(value_))
+	long long int num = value_;
+	long long int rev = 0;
+	long long int rem = 0;
+	while (num != 0)
 	{
-		if (value_%i==0)
+		rem = num % 10;
+		rev = rev * 10 + rem;
+		num /= 10;
+	}
+	return rev;
+}
+
+int IsPalindrome(unsigned long value_)
+{
+	return value_ == Reverse(value_);
+}
+
+int IsPrime(unsigned long long value_)
+{
+	int prime = 0;
+
+	for (int i = 2; i <= sqrt(value_); ++i)
+	{
+		if (value_ % i == 0)
 		{
-			simple = 2;
+			prime = 2;
 			break;
 		}
 		else
 		{
-			simple = 1;
+			prime = 1;
 		}
-		i += 1;
 	}
-	return simple;
+
+	return prime;
 }

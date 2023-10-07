@@ -9,12 +9,27 @@
 * @return Квадрат числа.
 */
 unsigned long long Square(const long long value_);
+
 /*
 * @brief Проверка простого числа.
 * @param value_ : Число
-* @return 1 - простое, 2 - .
+* @return 1 - простое, 2 - составное.
 */
-int SimpleNum(unsigned long value_);
+int IsPrime(unsigned long value_);
+
+/*
+* @brief Переворачивает число.
+* @param value_ : Число.
+* @return перевернутое число.
+*/
+int Reverse(unsigned long value_);
+
+/*
+* @brief Проверка на палиндром.
+* @param value_ : Число.
+* @return палиндром или не палиндром.
+*/
+int IsPalindrome(unsigned long value_);
 
 #endif // !_FUNCTION_H_
 
