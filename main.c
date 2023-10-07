@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include "euler.h"
+#include "function.h"
 
 #define SIZE 2
 
 int main()
 {
-   unsigned int number = 0;
+   unsigned long long number = 0;
    printf("Number = ");
-   scanf_s("%du", &number);
+   scanf_s("%llu", &number);
+   printf("%llu",Problem_3(number));
 
  /*  unsigned int multiples[SIZE];
    printf("multiples = ");                   ÔÈÁÎÍÀ×È

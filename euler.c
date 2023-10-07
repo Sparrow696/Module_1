@@ -1,4 +1,5 @@
 #include "euler.h"
+#include "function.h"
 
 unsigned long long Problem_1(const unsigned int number_, const unsigned int* multiples_, const unsigned int size_)
 {
@@ -44,10 +45,20 @@ unsigned long long Problem_2(const unsigned int number_)
    return sum;
 }
 
-unsigned long long Problem_3(const unsigned int number_)
+unsigned long long Problem_3(const unsigned long long int number_)
 {
-  for(unsigned int multNum=0;multNum<=number_;++multNum)
-
-
-      return 0;
+    unsigned long long res = number_;
+    unsigned long long i = 2;
+    for (i=2; i < res; ++i)
+    {
+        if (res%i==0)
+        {
+            res = res / i;
+            printf("%llu \n",i);
+            printf("res= %llu\n", res);
+            i = 2;
+        }
+        
+    }
+   return res;
 }

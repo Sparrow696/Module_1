@@ -8,6 +8,7 @@
 * @return Сумма меньших и кратных.
 */
 unsigned long long Problem_1(const unsigned int number_, const unsigned int* multiples_, const unsigned int size_);
+
 /*
 * * @brief Найти сумму четных элементов ряда Фибоначи.
 * @param number_ : Число, меньше которого ищется сумма.
@@ -20,4 +21,4 @@ unsigned long long Problem_2(const unsigned int number_);
 * @param number_ : Число, для которого ищется делитель.
 * @return Самый большой делитель.
 */
-unsigned long long Problem_3(const unsigned int number_);
+unsigned long long Problem_3(const unsigned long long number_);
