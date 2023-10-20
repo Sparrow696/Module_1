@@ -25,7 +25,7 @@ int IsPalindrome(unsigned long value_)
 	return value_ == Reverse(value_);
 }
 
-int IsPrime(unsigned long long value_)
+int IsPrime(unsigned long value_)
 {
 	int prime = 0;
 

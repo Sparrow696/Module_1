@@ -21,10 +21,16 @@ unsigned long long Problem_2(const unsigned int number_);
 * @param number_ : „исло, дл€ которого ищетс€ делитель.
 * @return —амый большой делитель.
 */
-unsigned long long Problem_3(const unsigned long long number_);
+unsigned long long Problem_3(const unsigned long long int number_);
 
 /*
 * * @brief Ќайти самый большой палиндром полученный умножением двух трехзначных чисел.
 * @return —амый большой палиндром.
 */
 unsigned long long Problem_4();
+
+/*
+* * @brief Ќайти самое маленькое число которое делитс€ нацело на все числа от 1 до 20.
+* @return —амое маленькое число кратно от 1 до 20.
+*/
+unsigned long long int Problem_5();

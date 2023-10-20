@@ -11,10 +11,10 @@ int main()
 	scanf_s("%llu", &number);
 	printf("reverse = %d\n", Reverse(number));
 	printf("%d\n", IsPalindrome(number));*/
-	printf("%llu\n", Problem_4());
+	printf("%llu\n", Problem_5());
 
 	/*  unsigned int multiples[SIZE];
-	  printf("multiples = ");                   ФИБОНАЧИ
+	  printf("multiples = ");                   фибоначи
 	  for (unsigned int i = 0; i < SIZE; ++i)
 		 scanf_s("%du", &multiples[i]);*/
 	return 0;
