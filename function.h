@@ -31,5 +31,12 @@ int Reverse(unsigned long value_);
 */
 int IsPalindrome(unsigned long value_);
 
+/*
+* @brief Быки и Коровы.
+* @param value_ : Число.
+* @return игра.
+*/
+int Game(unsigned int value_);
+
 #endif // !_FUNCTION_H_
 

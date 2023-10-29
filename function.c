@@ -1,5 +1,6 @@
 #include "function.h"
 #include <math.h>
+#include <stdio.h>
 
 unsigned long long Square(const long long value_)
 {
@@ -23,6 +24,63 @@ int Reverse(unsigned long value_)
 int IsPalindrome(unsigned long value_)
 {
 	return value_ == Reverse(value_);
+}
+
+int Game(unsigned int value_)
+{
+	int arr[4];
+	int usArr[4];
+	int usNum = 0;
+	int num = value_;
+	int a = 1000;
+	int bull = 0;
+	int cow = 0;
+	int t = 0;
+	for (int i = 0; i < 4; ++i)
+	{
+		arr[i] = num / a;
+		num = num % a;
+		a = a / 10;
+	}
+
+	while (bull != 4)
+	{
+		cow = 0;
+		bull = 0;
+		printf("\nчисло?: ");
+		scanf_s("%d", &usNum);
+		a = 1000;
+		for (int j = 0; j < 4; ++j)
+		{
+			usArr[j] = usNum / a;
+			usNum = usNum % a;
+			a = a / 10;
+		}
+
+		for (int i = 0; i < 4; i++)
+		{
+			if (usArr[i] == arr[i])
+			{
+				bull++;
+			}
+		}
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				if (usArr[i] == arr[j] && usArr[j] != arr[j])
+				{
+					cow++;
+				}
+			}
+		}
+
+		printf("Коров = %d Быков = %d", cow, bull);
+		t++;
+	}
+	printf("\nТы отгадал число за %d шагов!", t);
+
+	return 0;
 }
 
 int IsPrime(unsigned long value_)
