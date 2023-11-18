@@ -1,6 +1,8 @@
 #include "function.h"
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 unsigned long long Square(const long long value_)
 {
@@ -9,15 +11,16 @@ unsigned long long Square(const long long value_)
 
 int Reverse(unsigned long value_)
 {
-	long long int num = value_;
-	long long int rev = 0;
-	long long int rem = 0;
+	int num = value_;
+	int rev = 0;
+	int rem = 0;
 	while (num != 0)
 	{
 		rem = num % 10;
 		rev = rev * 10 + rem;
 		num /= 10;
 	}
+
 	return rev;
 }
 
@@ -81,6 +84,32 @@ int Game(unsigned int value_)
 	printf("\nТы отгадал число за %d шагов!", t);
 
 	return 0;
+}
+
+int FGetLine(char* line_, FILE* f_)
+{
+	char* lineCopy = line_;
+	if (f_ == NULL)
+	{
+		perror("f_ == NULL!\n");
+		return 0;
+	}
+
+	while (1)
+	{
+		char c = fgetc(f_);
+		if (c == '\n' || c == EOF)
+			break;
+		else
+		{
+			*lineCopy = c;
+			lineCopy++;
+		}
+
+	}
+	*lineCopy = '\0';
+
+	return strlen(line_);
 }
 
 int IsPrime(unsigned long value_)

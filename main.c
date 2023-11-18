@@ -10,28 +10,41 @@
 int main()
 {
 	setlocale(LC_ALL, "Rus");
+	char line[100] = "";
 
-	unsigned int usChoise = 0;
-	srand((unsigned int)time(NULL));
-	unsigned int random = rand() % 9;
-	printf("1. Играть против компьютера.\n2. Играть против человека.\n");
-	scanf_s("%d", &usChoise);
-	switch (usChoise)
+	FILE* file;
+	fopen_s(&file, "file.txt", "r");
+	if (!file)
 	{
-	case 1:
-		printf("Пока не работает :3");
-		//Game(random);
-		break;
-	case 2:
-		printf("Загадай число: ");
-		scanf_s("%d", &usChoise);
-		system("cls");
-		Game(usChoise);
-		break;
-	default:
-		printf("Ну и ладно :( ");
-		break;
+		perror("f == NULL!");
+		return 1;
 	}
+
+	printf("%d\n",FGetLine(line, file));
+	printf("%s\n", line);
+
+	fclose(file);
+	//unsigned int usChoise = 0;
+	//srand((unsigned int)time(NULL));
+	//unsigned int random = rand() % 9;
+	//printf("1. Играть против компьютера.\n2. Играть против человека.\n");
+	//scanf_s("%d", &usChoise);
+	//switch (usChoise)
+	//{
+	//case 1:
+	//	printf("Пока не работает :3");
+	//	//Game(random);
+	//	break;
+	//case 2:
+	//	printf("Загадай число: ");
+	//	scanf_s("%d", &usChoise);
+	//	system("cls");
+	//	Game(usChoise);
+	//	break;
+	//default:
+	//	printf("Ну и ладно :( ");
+	//	break;
+	//}
 	/*printf("Number = ");
 	scanf_s("%llu", &number);
 	printf("reverse = %d\n", Reverse(number));

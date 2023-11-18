@@ -3,6 +3,8 @@
 #ifndef _FUNCTION_H_
 #define _FUNCTION_H_
 
+#include <stdio.h>
+
 /*
 * @brief Возводит число в квадрат.
 * @param value_ : Число
@@ -37,6 +39,14 @@ int IsPalindrome(unsigned long value_);
 * @return игра.
 */
 int Game(unsigned int value_);
+
+/*
+* @brief Считывает строку из файла.
+* @param line_ : строка куда считываем.
+* @param f_ : файл откуда считывать строку.
+* @return кол-во считываемых символов.
+*/
+int FGetLine(char* line_, FILE* f_);
 
 #endif // !_FUNCTION_H_
 
