@@ -23,24 +23,18 @@ unsigned long long Problem_1(const unsigned int number_, const unsigned int* mul
 
 unsigned long long Problem_2(const unsigned int number_)
 {
-	unsigned long long sumFib = 0;
-	unsigned long long sum = 0;
-	unsigned int fibElemFirst = 1;
-	unsigned int fibElemSecond = 2;
-	while (sumFib <= number_)
+	unsigned long long sum = 2;
+	unsigned int fib1 = 1;
+	unsigned int fib2 = 2;
+	while (sum <= number_)
 	{
-		sumFib = fibElemFirst + fibElemSecond;
-		printf("%d\n", sumFib);
-		if (fibElemSecond % 2 == 0)
+		fib2 = fib1 + fib2;
+		if (fib2 % 2 == 0)
 		{
-			sum += fibElemSecond;
-			printf("sum = %d\n", sum);
+			sum += fib2;
 		}
-		fibElemFirst = fibElemSecond;
-		fibElemSecond = sumFib;
-
+		fib1 = fib2-fib1;
 	}
-
 
 	return sum;
 }
@@ -57,6 +51,7 @@ unsigned long long Problem_3(const unsigned long long int number_)
 		}
 
 	}
+
 	return res;
 }
 
@@ -64,23 +59,21 @@ unsigned long long Problem_4()
 {
 	int palindrome = 0;
 	int res = 0;
-	int max = 0;
-	for (int a = 900; a < 1000; a++)
+	for (int a = 100; a < 1000; a++)
 	{
-		for (int b = 900; b < 1000; b++)
+		for (int b = 100; b < 1000; b++)
 		{
 			res = a * b;
 			if (IsPalindrome(res))
 			{
-				palindrome = res;
-				if (max < palindrome)
+				if (palindrome < res)
 				{
-					max = palindrome;
+					palindrome = res;
 				}
 			}
-
 		}
 	}
+
 	return palindrome;
 }
 

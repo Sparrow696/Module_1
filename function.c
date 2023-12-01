@@ -1,8 +1,6 @@
 #include "function.h"
 #include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 unsigned long long Square(const long long value_)
 {
@@ -11,16 +9,15 @@ unsigned long long Square(const long long value_)
 
 int Reverse(unsigned long value_)
 {
-	int num = value_;
-	int rev = 0;
-	int rem = 0;
+	long long int num = value_;
+	long long int rev = 0;
+	long long int rem = 0;
 	while (num != 0)
 	{
 		rem = num % 10;
 		rev = rev * 10 + rem;
 		num /= 10;
 	}
-
 	return rev;
 }
 
@@ -66,9 +63,6 @@ int Game(unsigned int value_)
 			{
 				bull++;
 			}
-		}
-		for (int i = 0; i < 4; i++)
-		{
 			for (int j = 0; j < 4; j++)
 			{
 				if (usArr[i] == arr[j] && usArr[j] != arr[j])

@@ -3,8 +3,6 @@
 #ifndef _FUNCTION_H_
 #define _FUNCTION_H_
 
-#include <stdio.h>
-
 /*
 * @brief Возводит число в квадрат.
 * @param value_ : Число
@@ -47,6 +45,5 @@ int Game(unsigned int value_);
 * @return кол-во считываемых символов.
 */
 int FGetLine(char* line_, FILE* f_);
-
 #endif // !_FUNCTION_H_
 

@@ -10,49 +10,30 @@
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	char line[100] = "";
-
-	FILE* file;
-	fopen_s(&file, "file.txt", "r");
-	if (!file)
+	unsigned int number = 0;
+	unsigned int number2 = 0;
+	unsigned int sqr = 0;
+	int t = 0;
+	int rem = 0;
+	int d = 1;
+	printf("число: ");
+	scanf_s("%d", &number);
+	while (number != 0) {
+		rem = number % 8;
+		number2 = number2 + rem * d;
+		number /= 8;
+		d *= 10;
+	}
+	number2 /= 10;
+	printf("%d",number2);
+	for (unsigned i = 1; sqr + 2 <= number2; i += 2) {
+		sqr += i;
+		t++;
+	}
+	if (number2 == sqr || number2 == 1)
 	{
-		perror("f == NULL!");
-		return 1;
+		printf("Yes");
 	}
 
-	printf("%d\n",FGetLine(line, file));
-	printf("%s\n", line);
-
-	fclose(file);
-	//unsigned int usChoise = 0;
-	//srand((unsigned int)time(NULL));
-	//unsigned int random = rand() % 9;
-	//printf("1. Играть против компьютера.\n2. Играть против человека.\n");
-	//scanf_s("%d", &usChoise);
-	//switch (usChoise)
-	//{
-	//case 1:
-	//	printf("Пока не работает :3");
-	//	//Game(random);
-	//	break;
-	//case 2:
-	//	printf("Загадай число: ");
-	//	scanf_s("%d", &usChoise);
-	//	system("cls");
-	//	Game(usChoise);
-	//	break;
-	//default:
-	//	printf("Ну и ладно :( ");
-	//	break;
-	//}
-	/*printf("Number = ");
-	scanf_s("%llu", &number);
-	printf("reverse = %d\n", Reverse(number));
-	printf("%d\n", IsPalindrome(number));*/
-
-	/*unsigned int multiples[SIZE];
-	printf("multiples = ");                   фибоначи
-	for (unsigned int i = 0; i < SIZE; ++i)
-	 scanf_s("%du", &multiples[i]);*/
 	return 0;
 }
